@@ -40,3 +40,4 @@ end
 And(/^имя файла должно совпадать с именем релиза на сайте$/) do
   expect(@file_name).to include(@release_name)
 end
+
