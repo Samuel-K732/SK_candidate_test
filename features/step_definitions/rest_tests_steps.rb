@@ -76,7 +76,7 @@ end
 
 Then(/^проверяю, что у пользователя с логином (\w+\.\w+) имя равно (\w+) и фамилия равна (\w+)$/) do |login, expected_name, expected_surname|
   users_full_information = $rest_wrap.get('/users')
-  user = users_full_information.find{|u| u['login'] == login}
+  user = users_full_information.find { |u| u['login'] == login }
 
   actual_name = user['name']
   actual_surname = user['surname']
@@ -90,7 +90,7 @@ Then(/^проверяю, что у пользователя с логином (\
 end
 
 When(/^удаляю пользователя с логином (\w+\.\w+)$/) do |login|
-  user = @scenario_data.users_full_info.find{|u| u['login'] == login}
+  user = @scenario_data.users_full_info.find { |u| u['login'] == login }
   if user
     $rest_wrap.delete("/users/#{user['id']}")
     $logger.info("Пользователь #{login} удалён.")
