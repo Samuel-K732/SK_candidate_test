@@ -27,7 +27,7 @@ And(/^скачиваю последний стабильный релиз Ruby$/
   $logger.info("Релиз: Ruby #{@release_name}, ссылка: #{href}")
 
   URI.open(href, 'rb') do |remote|
-    File.open(@download_path, 'wb') { |f| f.write(remote.read) }
+    File.open(@download_path, 'wb') {|f| f.write(remote.read)}
   end
 
   $logger.info("Файл #{@file_name} скачан в #{@download_path}")
